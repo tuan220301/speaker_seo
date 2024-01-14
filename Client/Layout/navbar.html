@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
+</head>
+<div class="container_navbar">
+    <div class="title_container">
+        <p class="title">Loa tại xưởng</p>
+    </div>
+    <div class="menu_container">
+        <div class="list_item">
+            <a href="" class="item_name active_item">Trang chủ</a>
+            <a href="" class="item_name">Danh sách sản phẩm</a>
+            <a href="" class="item_name">Liên hệ</a>
+        </div>
+        <button class="dropdown-toggle" onclick="openNav()">
+            <i class="fa-solid fa-bars icon_navbar"></i>
+        </button>
+        <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+</div>
+<script src="./navbar.js"></script>

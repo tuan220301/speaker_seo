@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    /* Đặt padding về 0 nếu bạn muốn xóa cả padding */
+}
+
+.page_div {
+    width: 100%;
+    background-color: black;
+    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/banner_demo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.page-main-content {
+    padding-left: 10px;
+}
+
+.button-hero-img {
+    border: 1px solid white;
+    padding: 10px;
+    background-color: unset;
+    color: white;
+    margin-top: 10px;
+}
+
+.button-hero-img:hover {
+    background-color: rgb(255, 255, 255, 0.8);
+    border: 1px solid rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+    color: black;
+}
+
+.introduce-content-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-introduce {
+    display: flex;
+    justify-content: center;
+}
+
+.introduce-part {
+    /* border: 1px solid black; */
+    width: 32%;
+    height: 500px;
+    margin: 5px;
+    /* height: 100px; */
+}
+
+.img-introduce1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/demo1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+
+.img-introduce2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/demo2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+
+.img-introduce3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/demo3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
+
+.content-padding {
+    padding: 5px;
+}
+
+.button-read-content {
+    border: 1px solid black;
+    padding: 10px 35px 10px 35px;
+}
+
+.button-read-content:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+    border: 1px solid rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+    color: white;
+}
+
+.button-descript {
+    border: 1px solid white;
+    padding: 10px 35px 10px 35px;
+}
+
+.button-descript:hover {
+    background-color: rgb(0, 0, 0, 0.8);
+    border: 1px solid rgb(0, 0, 0, 0.8);
+    cursor: pointer;
+    color: white;
+}
+
+.size-cus {
+    height: 20px;
+}
+
+.shop-intro {
+    width: auto;
+    /* background-color: black; */
+    height: 600px;
+    /* background: linear-gradient(to bottom, #121213 4%, #d4d4d4 100%); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/demo4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.shop-intro-text {
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 5%;
+}
+
+.trending-div {
+    height: 500px;
+    width: 100%;
+}
+
+.trending-img {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+}
+
+.group-soocial {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.group-soocial a {
+    cursor: pointer;
+}
+
+.group-soocial i {
+    font-size: 25px;
+}
+
+.trending-div-slider {
+    display: none;
+}
+
+.detail {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 95%;
+    text-align: center;
+}
+
+.detail-flex {
+    padding: 10px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* body {
+        height: 100vh;
+        overflow-y: auto;
+    } */
+    .size-cus {
+        height: 25px;
+    }
+
+    .introduce-content-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .introduce-part {
+        width: 95%;
+        height: 550px;
+    }
+
+    .shop-intro-text {
+        margin-top: 20px;
+        width: 250px;
+        height: auto;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        /* gap: 10px; */
+        margin-left: 5%;
+    }
+
+    .trending-div {
+        display: none;
+    }
+
+    .trending-div-slider {
+        display: block;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        margin-top: 10px;
+        padding-top: 10px;
+        width: 95%;
+        /* max-width: 1000px; */
+        position: relative;
+        margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+
+
+    .mySlides {
+        width: 100%;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    .cover-image {
+        width: 95%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+/* slider */

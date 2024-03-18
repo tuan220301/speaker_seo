@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../../fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../Main/main.css">
+    <link rel="stylesheet" href="../../Layout/navbar.css">
+    <link rel="stylesheet" href="../../constant/index.css">
+    <link rel="stylesheet" href="./list.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="constant-page_div" style="height: 75px;">
+        <div class="constant-container-navbar">
+            <div class="constant-title_container">
+                <p class="constant-title">Loa tại xưởng</p>
+            </div>
+            <div class="constant-menu_container">
+                <div class="list_item">
+                    <a href="../../../../index.html" class="item_name">Trang chủ</a>
+                    <a href="../Product/List/list.html" class="item_name active_item">Sản phẩm</a>
+                    <a href="../../XuongNhac/xuongnhac.html" class="item_name">Xưởng nghe</a>
+                    <a href="../../Contact/contact.html" class="item_name">Liên hệ</a>
+                </div>
+                <button class="dropdown-toggle" onclick="openNav()">
+                    <i class="fa-solid fa-bars icon_navbar"></i>
+                </button>
+                <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn sidenav_a" onclick="closeNav()">&times;</a>
+                    <a href="../../../../index.html" class="sidenav_a">Trang chủ</a>
+                    <a href="#" class="sidenav_a active_item">Sản phẩm</a>
+                    <a href="../../XuongNhac/xuongnhac.html" class="sidenav_a">Xưởng nghe</a>
+                    <a href="../../Contact/contact.html" class="sidenav_a">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div class="product-container" id="content">
+        <div class="product-layout">
+            <!-- responsive for mobile -->
+            <div class="filter-button">
+                <button class="filter-button-content" id="myBtn">
+                    <p style="width: 90%;font-weight: bold">TÙY CHỌN</p>
+                    <i class="fa-solid fa-gears" style="font-size: 20px; width: auto;"></i>
+                </button>
+            </div>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="header-modal constant-bottom-line">
+                        <h3>TÙY CHỌN TÌM KIẾM SẢN PHẨM</h3>
+                        <i class="fa-solid fa-xmark close" style="font-size: 28px;"></i>
+                    </div>
+                    <div class="body-modal constant-bottom-line">
+                        <form id="itemForm">
+                            <div id="itemList">
+                                <div class="list-item constant-width-line-max">
+                                    <h3>TRẠNG THÁI</h3>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Đang giảm giá</p>
+                                        <input type="checkbox" name="items" value="item1"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Hàng mới</p>
+                                        <input type="checkbox" name="items" value="item2"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Giới hạn</p>
+                                        <input type="checkbox" name="items" value="item3"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                </div>
+                                <div class="list-item constant-width-line-max">
+                                    <h3>KIỂU DÁNG</h3>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Cổ điển</p>
+                                        <input type="checkbox" name="items" value="item4"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Hiện đại</p>
+                                        <input type="checkbox" name="items" value="item5"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Nhỏ gọn</p>
+                                        <input type="checkbox" name="items" value="item6"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>KTV</p>
+                                        <input type="checkbox" name="items" value="item7"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                </div>
+                                <div class="list-item constant-width-line-max">
+                                    <h3>MÀU SẴC</h3>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Vàng</p>
+                                        <input type="checkbox" name="items" value="item8"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Cam</p>
+                                        <input type="checkbox" name="items" value="item9"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Đen</p>
+                                        <input type="checkbox" name="items" value="item10"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                    <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                        style="justify-content: space-between;">
+                                        <p>Xanh lá</p>
+                                        <input type="checkbox" name="items" value="item11"
+                                            class="constant-checkbox-style">
+                                    </label>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="footer-modal">
+                        <button type="button" class="button-modal-filter" onclick="getSelectedItems()">Lọc sản
+                            phẩm</button>
+                        <button type="button" class="button-modal-clear-filter" onclick="clearAll()">Xóa lựa
+                            chọn</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- responsive for mobile -->
+            <div class="drawer">
+                <div class="drawer-content">
+                    <form id="itemForm2">
+                        <button type="button" class="collapsible" id="collapsibleBtn">
+                            <div class="constant-same-line" style="width: 100%; gap: 10px;">
+                                <h3>TRẠNG THÁI</h3>
+                                <i class="fa-solid fa-caret-down" id="icon" style="font-size: 20px;"></i>
+                            </div>
+                        </button>
+                        <div class="content">
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Đang giảm giá</p>
+                                <input type="checkbox" name="items" value="item1" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Hàng mới</p>
+                                <input type="checkbox" name="items" value="item2" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Giới hạn</p>
+                                <input type="checkbox" name="items" value="item3" class="constant-checkbox-style">
+                            </label>
+                        </div>
+                        <button type="button" class="collapsible" id="collapsibleBtn2">
+                            <div class="constant-same-line" style="width: 100%; gap: 10px;">
+                                <h3>KIỂU DÁNG</h3>
+                                <i class="fa-solid fa-caret-down" id="icon2" style="font-size: 20px;"></i>
+                            </div>
+                        </button>
+                        <div class="content">
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Cổ điển</p>
+                                <input type="checkbox" name="items" value="item4" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Hiện đại</p>
+                                <input type="checkbox" name="items" value="item5" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Nhỏ gọn</p>
+                                <input type="checkbox" name="items" value="item6" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>KTV</p>
+                                <input type="checkbox" name="items" value="item7" class="constant-checkbox-style">
+                            </label>
+                        </div>
+                        <button type="button" class="collapsible" id="collapsibleBtn3">
+                            <div class="constant-same-line" style="width: 100%; gap: 10px;">
+                                <h3>MÀU SẮC</h3>
+                                <i class="fa-solid fa-caret-down" id="icon3" style="font-size: 20px;"></i>
+                            </div>
+                        </button>
+                        <div class="content">
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Vàng</p>
+                                <input type="checkbox" name="items" value="item8" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Cam</p>
+                                <input type="checkbox" name="items" value="item9" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Đen</p>
+                                <input type="checkbox" name="items" value="item10" class="constant-checkbox-style">
+                            </label>
+                            <label class="constant-same-line constant-width-line-max line-form-cursor"
+                                style="justify-content: space-between;">
+                                <p>Xanh lá</p>
+                                <input type="checkbox" name="items" value="item11" class="constant-checkbox-style">
+                            </label>
+                        </div>
+                        <div class="group-button">
+                            <button type="button" class="button-fillter" onclick="getSelectedItems()">Lọc </button>
+                            <button type="button" class="button-fillter" onclick="clearAll()">Xóa lọc</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="list-product-div">
+                <div class="wrapper" id="listItem">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div class="company-info">
+        <h3>Loa Tại Xưởng</h3>
+        <div class="constant-same-line">
+            <i class="fa-solid fa-location-dot icon"></i>
+            <p>542 Đ. Trần Văn Giàu, Tân Tạo, Bình Tân, Thành phố Hồ Chí Minh, Việt Nam</p>
+        </div>
+        <div class="constant-same-line">
+            <i class="fa-solid fa-phone icon"></i>
+            <p>0899312618</p>
+        </div>
+        <div class="constant-same-line">
+            <i class="fa-regular fa-envelope icon"></i>
+            <p>loataixuong@gmail.com</p>
+        </div>
+    </div>
+    <div class="facebook-blog">
+        <h3>Mạng xã hội</h3>
+        <a class="constant-same-line">
+            <i class="fa-brands fa-youtube"></i>
+            <p>Youtube</p>
+        </a>
+        <a class="constant-same-line">
+            <i class="fa-brands fa-square-facebook"></i>
+            <p>Facebook</p>
+        </a>
+        <a class="constant-same-line">
+            <i class="fa-brands fa-tiktok"></i>
+            <p>Tiktok</p>
+        </a>
+    </div>
+    <div class="blog-div">
+        <h3>Xưởng nghe</h3>
+        <p>Tận dụng lợi thế từ việc tự sản xuất, Loa Tại Xưởng không chỉ là dừng lại ở việc cung cấp các thiết bị âm
+            thanh chất
+            lượng cao với giá cả ổn định, và mạng lưới bảo hành rộng khắp cả nước. Đây còn là nơi lắng nghe, chia sẻ
+            những câu
+            chuyện và đam mê về âm thanh của người trẻ đang lập nghiệp.
+        </p>
+    </div>
+</footer>
+<script src="./list.js"></script>
+
+</html>

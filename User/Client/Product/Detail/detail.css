@@ -1,0 +1,196 @@
+.description-layout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.description-layout {
+    padding-top: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.des-div {
+    height: 550px;
+    width: 47%;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+.list-button-img {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    position: relative
+}
+
+.button-img {
+    width: 80px;
+    height: 80px;
+}
+
+.bottom-div-img {
+    height: 100px;
+    width: 100%;
+    flex: 1
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-top-right-radius: 10px;
+    border-top-left-radius: 10px; */
+}
+
+.button-for-scroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 50%
+}
+
+.arowbtn {
+    width: 50px;
+    height: 50px;
+    border: unset;
+    background-color: unset;
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.arowbtn:hover {
+    color: #fff;
+    /* background-color: #ccc; */
+}
+
+#slideImg {
+    overflow: hidden;
+    width: 47%;
+    /* height: 300px; */
+    /* Set your desired height */
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.buy-button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    text-decoration: unset;
+    background-color: black;
+    color: white;
+}
+
+.cus {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    font-size: 20px;
+}
+
+.buy-btn-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.more-description-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.table-div {
+    width: 80%;
+    border: 1px solid black;
+    margin-top: 30px;
+    /* padding: 10px; */
+}
+
+.table-div table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.table-div td,
+th {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+#loading-overlay {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .description-layout {
+        /* width: 100%; */
+        flex-direction: column;
+    }
+
+    .des-div {
+        width: 100%;
+        margin-bottom: 1%;
+    }
+
+    #slideImg {
+        overflow: hidden;
+        width: 100%;
+        /* height: 300px; */
+        /* Set your desired height */
+        position: relative;
+    }
+
+
+}

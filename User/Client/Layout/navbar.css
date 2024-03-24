@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    /* Đặt padding về 0 nếu bạn muốn xóa cả padding */
+}
+
+.list_item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.item_name {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Exo', sans-serif;
+}
+
+.active_item {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+.dropdown-toggle {
+    display: none;
+}
+
+.list_item:hover .dropdown,
+.list_item:focus-within .dropdown {
+    display: flex;
+}
+
+/* .sidenav {
+    display: none;
+} */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    align-items: center;
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-toggle {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: unset;
+        border: 0px;
+    }
+
+
+    .list_item {
+        display: none;
+    }
+
+    .menu_container {
+        width: auto;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+    }
+
+    .icon_navbar {
+        color: white;
+        font-size: 25px;
+        /* float: right; */
+    }
+
+    .list_item {
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+    }
+
+    .list_item a {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dropdown {
+        top: 100%;
+    }
+
+
+
+    .sidenav_a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .active_item {
+        text-decoration: underline;
+    }
+
+    .sidenav a:hover {
+        color: #fff;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
